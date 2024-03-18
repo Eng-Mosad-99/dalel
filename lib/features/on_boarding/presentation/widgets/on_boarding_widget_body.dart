@@ -8,14 +8,27 @@ class OnBoardingWidgetBody extends StatelessWidget {
   final PageController _controller = PageController();
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      height: 500,
       child: PageView.builder(
+        physics: const BouncingScrollPhysics(),
         controller: _controller,
         itemCount: 3,
         itemBuilder: (context, index) {
           return Column(
             children: [
-              Image.asset(Assets.resourceImagesOnBoarding1),
+              Container(
+                width: 343,
+                height: 290,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      Assets.resourceImagesOnBoarding1,
+                    ),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
               const SizedBox(
                 height: 24,
               ),
@@ -25,6 +38,8 @@ class OnBoardingWidgetBody extends StatelessWidget {
               ),
               Text(
                 'Explore The history with Dalel in a smart way',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 style: AppTextStyle.poppins500Style24.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
@@ -35,6 +50,8 @@ class OnBoardingWidgetBody extends StatelessWidget {
               ),
               const Text(
                 'Using our app’s history libraries you can find many historical periods',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 style: AppTextStyle.poppins300Style16,
                 textAlign: TextAlign.center,
               ),
