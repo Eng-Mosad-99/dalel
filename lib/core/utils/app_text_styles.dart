@@ -8,4 +8,16 @@ abstract class AppTextStyle {
     color: AppColors.kDeepBrownColor,
     fontFamily: 'Pacifico',
   );
+  static const poppins500Style24 = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+    fontFamily: 'Poppins',
+  );
+  static const poppins300Style16 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w300,
+    color: Colors.black,
+    fontFamily: 'Poppins',
+  );
 }
